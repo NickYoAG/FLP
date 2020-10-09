@@ -27,22 +27,6 @@ ifTrue: [
 ifFalse: [ 'No es Bisiesto' ] 
 
 4:
-|i temp op|
-i:=2.
-temp:=1.
-op:=0.
-[ i <= 20 ] whileTrue:[
-	[ temp <= 20 ] whileTrue:[
-		( (i rem: temp) =0 & ((i > 1) & ( (i>temp) | (i<temp)) ))
-		ifTrue: [ op:=0. 
-					temp:=20 
-		]
-		ifFalse: [ op=1 ].
-		temp:=temp+1.
-	].
-	(op=1)
-	ifTrue: [ Transcript show: i , ' es primo'.
-		 		op=0 
-	].
-	i:=i+1
-]
+|primos|
+primos:=(Integer primesUpTo: 20).
+Transcript show: primos asString , ' son primos'.
