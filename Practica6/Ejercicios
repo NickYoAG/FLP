@@ -1,0 +1,48 @@
+1:
+| value_1 value_2 |
+value_1 := UIManager default request: 'enter first value'.
+value_2 := UIManager default request: 'enter second value'.
+
+nums := Array newFrom: (value_1 asInteger to: value_2 asInteger).
+nums
+
+2:
+| value_1 |
+value_1 := UIManager default request: 'escriba un numero'.
+value_1  := value_1 asInteger rem: 2.
+(value_1 = 0)
+ifTrue: [ 'Es Par' ]
+ifFalse: [ 'Es Impar' ] 
+
+3:
+| value_1 |
+value_1 := UIManager default request: 'escriba un anio'.
+
+((value_1 asInteger rem: 4) = 0)  
+ifTrue: [ 
+	((value_1 asInteger rem: 100) = 0)
+	ifTrue: [ 'No es Bisiesto' ]
+	ifFalse: [ 'Es Bisiesto' ]
+	 ]
+ifFalse: [ 'No es Bisiesto' ] 
+
+4:
+|i temp op|
+i:=2.
+temp:=1.
+op:=0.
+[ i <= 20 ] whileTrue:[
+	[ temp <= 20 ] whileTrue:[
+		( (i rem: temp) =0 & ((i > 1) & ( (i>temp) | (i<temp)) ))
+		ifTrue: [ op:=0. 
+					temp:=20 
+		]
+		ifFalse: [ op=1 ].
+		temp:=temp+1.
+	].
+	(op=1)
+	ifTrue: [ Transcript show: i , ' es primo'.
+		 		op=0 
+	].
+	i:=i+1
+]
