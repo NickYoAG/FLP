@@ -1,4 +1,4 @@
-Funciones Requeridas:
+"Funciones Requeridas:"
 primo:x 
 |i j a|
 i:=2.
@@ -16,7 +16,7 @@ j:=2.
 |obj result|
 obj:= Practica8 new.
 result:=obj primo:4.
-////////////////////
+"////////////////////"
 primos_count:b 
 |i j a temp|
 temp:=0.
@@ -41,12 +41,12 @@ j:=1.
 (a>0) ifTrue:[temp:=0].
 temp:=temp-1.
 ^temp.
-----
+"----"
 |obj result|
 obj:= Practica8 new.
 result:=obj primos_count:5.
 Transcript show: result.
-////////////////////
+"////////////////////"
 voltear:x
 |temp counter in pos|
 in := x asString.
@@ -58,14 +58,14 @@ temp := ''.
       counter := counter +1].
 pos := temp.
 ^pos asInteger.
-----
+"----"
 |obj result|
 obj:= Practica8 new.
 result:=obj voltear:124.
 Transcript show: result.
 
-------------------------------------------------------------------------------------->
-Funcion Principal:
+"------------------------------------------------------------------------------------->"
+"Funcion Principal:"
 
 sheldon: x
 |a temp temp2 flag|
