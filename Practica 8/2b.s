@@ -1,4 +1,4 @@
-Funciones Requisito:
+"Funciones Requisito:"
 mult_dig:x
 |temp counter in pos a c|
 in := x asString.
@@ -13,15 +13,16 @@ a:=''.
    counter := counter + 1.
 ].
 Transcript show: temp.
-----
+"----"
 |obj result|
 obj:= Practica8 new.
 result:=obj mult_dig:73.
-//////////
-La funcion primo de la pregunta 2a
-La funcion primos_count de la pregunta 2a
+"//////////"
+"La funcion primo de la pregunta 2a"
+"La funcion primos_count de la pregunta 2a"
 
-Función Principal:
+"------------------------------------------------------------------------------------->"
+"Función Principal:"
 sheldon_b: x
 |a temp temp2 flag|
 a:=29.
@@ -40,7 +41,7 @@ flag:=0.
 	a:=a+1.
 ].
 (flag=0) ifTrue: [ Transcript show: 'No existe' ].
-----
+
 |obj result|
 obj:= Practica8 new.
 result:=obj sheldon_b: 100.
