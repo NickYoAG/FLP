@@ -82,8 +82,8 @@ flag:=0.
 			"temp2:=reverse(a).
 			temp2:=self primos_count: temp2."
 		].
-			((temp == (self voltear:temp2)) & ((temp~=21) & (temp~=12))) ifTrue: [ "Profe, aqui no considero el 37 porque obviamente si cumpliria, por eso no considero..." 
-			"...su posicion de primo que es 12"
+			((temp == (self voltear:temp2)) & ((temp~=21) & (temp~=12))) ifTrue: [ "Profe, aqui no considero el 37 porque obviamente si cumpliria, por eso ..." 
+			"...no considero su posicion en la lista de primos que seria 12"
 				Transcript show: 'Si existen' ; cr.
 				Transcript show: temp; cr.
 				Transcript show: temp2; cr.
