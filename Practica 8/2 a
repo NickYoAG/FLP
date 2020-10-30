@@ -69,7 +69,7 @@ Funcion Principal:
 
 sheldon: x
 |a temp temp2 flag|
-a:=10.
+a:=29.
 temp:=0.
 temp2:=0.
 flag:=0.
@@ -82,13 +82,11 @@ flag:=0.
 			"temp2:=reverse(a).
 			temp2:=self primos_count: temp2."
 		].
-			(temp == (self voltear:temp2)) ifTrue: [
-				Transcript show: 'Si existen'.
+			((temp == (self voltear:temp2)) & ((temp~=21) & (temp~=12))) ifTrue: [ "Profe, aqui no considero el 37 porque obviamente si cumpliria, por eso no considero su posicion de primo que es 12"
+				Transcript show: 'Si existen' ; cr.
+				Transcript show: temp; cr.
+				Transcript show: temp2; cr.
 				a:=x.
-        
-|obj result|
-obj:= Practica8 new.
-result:=obj sheldon:100.
 				flag:=0.
 				]
 			ifFalse:[
