@@ -1,0 +1,27 @@
+<html>
+<body>
+<script>
+	function factorial_rec(n){
+        if (n===1 || n===0){
+            return 1;
+        } 
+        if(n<0){
+            console.log("No exite facotiral de un numero negativo");
+            return;
+        }
+        var factorial = 1;
+        while (n > 1) {
+            factorial = factorial * n;
+            n--;
+        }
+        return factorial;
+        };
+    var result = factorial_rec(-1);
+    console.log(result);
+    result = factorial_rec(4);
+    console.log(result);
+    result = factorial_rec(8);
+    console.log(result);
+</script> 
+</body> 
+</html>

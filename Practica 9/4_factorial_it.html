@@ -1,0 +1,26 @@
+<html>
+<body>
+<script>
+	function factorial_it(n){
+        if (n===1 || n===0){
+            return 1;
+        } 
+        if(n<0){
+            console.log("No exite facotiral de un numero negativo");
+            return;
+        }
+        var fact=1;
+        for (i=1; i<=n; i++) {
+            fact = fact * i; 
+        }
+        return fact;
+        };
+    var result = factorial_it(-1);
+    console.log(result);
+    result = factorial_it(4);
+    console.log(result);
+    result = factorial_it(8);
+    console.log(result);
+</script> 
+</body> 
+</html>
