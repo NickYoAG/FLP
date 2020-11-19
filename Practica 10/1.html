@@ -1,0 +1,13 @@
+<html ><body >
+<script src =" ramda.min.js" > </script >
+<script >
+	function square (x) { return (x*x); }
+	function double (x) { return (x*2) ; }
+	function composedValue ( square, double, x ){
+		const composite = R.compose (square, double);
+		const y = composite(x);
+		return y;
+	}
+	console.log(composedValue(square, double, 3)) //36
+</script>
+</body> </html>
