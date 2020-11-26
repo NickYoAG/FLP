@@ -1,0 +1,28 @@
+<html ><body >
+<script >
+	let tasks = [
+		{'name' : 'Buy milk from the shop ',
+		 'duration' : 20,
+		 'priority' : 1},
+		{'name' : 'Clean the house',
+		 'duration' : 120 ,
+		 'priority' : 3},
+		{'name' : 'Study JS functions ',
+		 'duration' : 180 ,
+		 'priority' : 1}
+	];
+
+	function name_ite(x){
+		let name=[];
+		for (var i = 0; i < x.length ; i ++) {
+			name.push(x[i].name);
+		}
+		return name;
+	}
+	console.log(name_ite(tasks));
+	const a=tasks.map(x => x.name);
+	console.log(a);
+	
+
+</script>
+</body> </html>
