@@ -1,0 +1,29 @@
+<html ><body >
+<script >
+	let tasks = [
+		{'name' : 'Buy milk from the shop ',
+		 'duration' : 20,
+		 'priority' : 1},
+		{'name' : 'Clean the house',
+		 'duration' : 120 ,
+		 'priority' : 3},
+		{'name' : 'Study JS functions ',
+		 'duration' : 180 ,
+		 'priority' : 1}
+	];
+
+	function tiempo_ite(x){
+		let tiempo=0;
+		for (var i = 0; i < x.length ; i ++) {
+			tiempo=tiempo+x[i].duration;
+		}
+		return tiempo;
+	}
+	console.log(tiempo_ite(tasks));
+	const c=tasks.map(x => x.duration)
+	.reduce((total, tiempo) => total + tiempo);
+	console.log(c);
+	
+
+</script>
+</body> </html>

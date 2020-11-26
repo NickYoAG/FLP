@@ -1,0 +1,28 @@
+<html ><body >
+<script >
+	let tasks = [
+		{'name' : 'Buy milk from the shop ',
+		 'duration' : 20,
+		 'priority' : 1},
+		{'name' : 'Clean the house',
+		 'duration' : 120 ,
+		 'priority' : 3},
+		{'name' : 'Study JS functions ',
+		 'duration' : 180 ,
+		 'priority' : 1}
+	];
+
+	function priority_ite(x){
+		let priority=[];
+		for (var i = 0; i < x.length ; i ++) {
+			if(x[i].priority==1) priority.push(x[i]);
+		}
+		return priority;
+	}
+	console.log(priority_ite(tasks));
+	const b=tasks.filter(x => x.priority === 1);
+	console.log(b);
+	
+
+</script>
+</body> </html>
