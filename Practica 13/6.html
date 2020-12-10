@@ -1,0 +1,24 @@
+<html><body>
+<script>
+	function abc (a, b, c){
+		return a+b+c;
+	}
+	function curry (f) {
+		return function curried(){
+			const args=Array.prototype.slice.call(arguments);
+			if(args.length >= f.length){
+				return f.apply(null, args)
+			}
+			else{
+				return curried.bind(null, ...args)
+			}
+		} 
+	}
+	var curriedAbc = curry(abc);
+	console.log("Funcion Curried");
+	console.log(curriedAbc(2)(3)(4)); // 9
+	console.log(curriedAbc(2 ,3)(4)); // 9
+	console.log(curriedAbc(2) (3 ,4)); // 9
+	console.log(curriedAbc(2 ,3 ,4) ) ; // 9
+</script>
+</body></html>

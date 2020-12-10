@@ -1,0 +1,22 @@
+<html><body>
+<script>
+	var suma_currying=0; //Variable global para ir acumulando la suma
+	delayInvoc=function (a){
+		suma_currying+=a;
+		return function sumar (b){
+			if(b != undefined){
+				suma_currying+=b;
+				return sumar;
+			}
+			return suma_currying;
+		}
+	}
+	console.log("Suma Acumulativa con Currying")
+	delayInvoc(4)(5);
+	console.log(suma_currying); //9
+	delayInvoc(4)(5)(8);
+	console.log(suma_currying); // 26
+	delayInvoc(4)(5)(8)(9);
+	console.log(suma_currying); // 35
+</script>
+</body></html>

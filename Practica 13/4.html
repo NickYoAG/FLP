@@ -1,0 +1,18 @@
+<html><body>
+<script>
+	const joinWords = valor_1 => valor_2 =>{
+		if(valor_2 === undefined){
+			return valor_1;
+		}
+		else{
+			return joinWords(valor_1 + ' ' + valor_2);
+		}};
+
+	result = joinWords('Hello ') () ;
+	console.log(result); // Hello
+	result = joinWords('There ')('is ')('o ')('spoon .')();
+	console.log (result); // There is no spoon .
+	result = joinWords('Voy ')('a ')('aprobar ')('Fundamentos de Lenguaje de Programación .')();
+	console.log (result); // Voy a aprobar Fundamentos de Lenguaje de Programación .
+</script>
+</body></html>

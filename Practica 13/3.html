@@ -1,0 +1,12 @@
+<html><body>
+<script>
+//Normal
+	function vol_cil(r, h){
+		return (3.14159*(r*r)*h);
+	}
+	console.log("El Volumen del Cilindro es: ", vol_cil(2, 4));
+//Currying
+	const vol_cil_2 = r => h => 3.14159*(r*r)*h;
+	console.log("El Volumen del Cilindro usando Currying es: ", vol_cil_2(2)(4));
+</script>
+</body></html>
