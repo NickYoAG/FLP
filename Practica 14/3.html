@@ -1,21 +1,5 @@
 <html><body>
-<script>
-	//const a=factorial_sin_memo(4);
-	//console.log(a);
-	//const b=factorial_sin_memo(4);
-	//console.log(b);
-	/*let caches = [1];
-	function factorial_memon(n){
-		    if (!caches[n]) {
-		      caches[n] = n * factorial_memon(n - 1)
-		    } else { // just to demo cache:
-		        //console.log("cache hit:", n)
-		    }
-		    return caches[n]
-		}*/
-	//console.log(factorial_memon(4));
-
-
+<script>	
 	function factorial_sin_memo (n) {
 		var total = 1; 
 		if(n===0) return 1;
@@ -26,12 +10,12 @@
 	}
 	function factorial_con_memo(a){
 		//console.log(a(n));
-		var cache = [1];
+		var cache ={};
 		function factorial_memo(n){
 		    if (!cache[n]) {
 		      cache[n] = n * a(n - 1)
-		    } else { // just to demo cache:
-		        //console.log("cache hit:", n)
+		    } else { 
+		    		return cache[n];
 		    }
 		    return cache[n]
 		}
