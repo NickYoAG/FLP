@@ -1,0 +1,43 @@
+<html><body>
+<script>
+//Concepto:
+//Se refiera a cuando las funciones en cualquier lenguaje de programación son tratadas como cualquier otra variable. Por //ejemplo, en dicho lenguaje, una función puede ser pasada como argumento a otras funciones, puede ser retornada por otra //función y puede ser asignada a una variable.
+	//------------------------------------------
+	function ejemplo() {
+   		return "Ejemplo de primera clase\n";
+	}
+	function ejemplo_aux(a, b) {
+  		console.log(a() + b);
+	}
+	// Pasamos 'ejemplo' como argumento de la función 'ejemplo_aux'
+	ejemplo_aux(ejemplo, "Aproboncio 1");
+	//Pasamos nuestra función ejemplo() como argumento de la función ejemplo_aux(), esto explica como tratamos la función como un valor
+
+	//------------------------------------------
+	//En este ejemplo; Necesitamos devolver una función desde otra función - Podemos devolver una función porque JavaScript trata la función como un value.
+	function ejemplo2() {
+   		return function() {
+      	console.log("Ejemplo 2 de primera clase: Aproboncio 2");
+   		}
+	}
+	ejemplo2(); //Debemos usar otra variable para que devuelve el mensaje. Si se invoca 'ejemplo2' directamente, devolvera la función propia sin invocar a la función ineterna.
+
+	//------------------------------------------
+	//Ahora, necesitamos invocar la función 'ejemplo' y su  función interna devuelta. Para ello, tenemos dos maneras:
+	const variable = function() {
+   		return function() {
+      	console.log("Ejemplo 3 de primera clase: Aproboncio 3");
+	   	}
+	}
+	const funcion_pc = variable();
+	funcion_pc();
+	//Usamos parétesis doble ()() para invocar también a la función interna.
+	function ejemplo3() {
+	   return function() {
+	      console.log("Ejemplo 4 de primera clase: Aproboncio 4");
+	   }
+	}
+	ejemplo3()();
+
+</script>
+</body></html>
