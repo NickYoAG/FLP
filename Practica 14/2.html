@@ -1,0 +1,125 @@
+<html><body>
+<script>
+	/*function factorial (n) {
+		var total = 1; 
+		if(n===0) return 1;
+		for (i=1; i<=n; i++) {
+			total = total * i; 
+		}
+		return total; 
+	}*/
+	function factorial( number ) {	
+		var product = Math.max(1,number)
+		while( number-- > 1 ) {
+			product *= number
+		}
+		return product
+	}
+
+	var res=0;
+	var numerador=0;
+	var denominator=0;
+	var flag=0;
+	var exp=0;
+	var memocos = {};
+	function coseno(x, ite) {
+		if(ite in memocos){
+			res = memocos[ite];
+			memocos = {};
+		}
+		else{
+			if(ite===0){
+				let res=0;
+				let numerador=0;
+				let denominator=0;
+				let flag=0;
+				let exp=0;
+				res = memocos[ite];
+				memocos = {};
+			}
+			else{
+				numerador=Math.pow(x, exp);
+				denominador=factorial(exp);	
+				if(flag===0){
+					if(exp===0){
+						res=numerador/denominador;
+						flag=1;
+						exp=exp+2;
+						ite--;
+					}
+					else{	
+						res=res + numerador/denominador;
+						flag=1;
+						exp=exp+2;
+						ite--;
+						}
+				}
+				else{
+					res=res - numerador/denominador;
+					flag=0;	
+					exp=exp+2;
+					ite--;
+				}
+				coseno(x, ite);
+			}
+			memocos[ite] = res;
+		}
+		return res;
+	}
+
+	var exp2=1;
+	var memosen = {};
+	function seno(x, ite) {
+		if(ite in memosen){
+			res = memosen[ite];
+			memosen = {};
+		}
+		else{
+			if(ite===0){
+				let res=0;
+				let numerador=0;
+				let denominator=0;
+				let flag=0;
+				let exp2=0;
+				res = memosen[ite];
+				memosen = {};
+			}
+			else{
+				numerador=Math.pow(x, exp2);
+				denominador=factorial(exp2);	
+				if(flag===0){
+					if(exp2===1){
+						res=numerador/denominador;
+						flag=1;
+						exp2=exp2+2;
+						ite--;
+					}
+					else{	
+						res=res + numerador/denominador;
+						flag=1;
+						exp2=exp2+2;
+						ite--;
+						}
+				}
+				else{
+					res=res - numerador/denominador;
+					flag=0;	
+					exp2=exp2+2;
+					ite--;
+				}
+				seno(x, ite);
+			}
+			memosen[ite] = res;
+		}
+		return res;
+	}
+	console.log("Coseno con Memoization:", coseno(2, 12)); // (Numero, Numero de Iteraciones)
+	console.log("Coseno con Funcion Math.cos", Math.cos(2));
+	console.log("Seno con Memoization:", seno(2, 12)); // (Numero, Numero de Iteraciones)
+	console.log("Seno con Funcion Math.sin", Math.sin(2));
+	//-0.41614683654714246 --> Coseno de 2 según JavaScript
+	//0.9092974268256817 --> Seno de 2 según JavaScript
+
+
+</script>
+</body></html>
